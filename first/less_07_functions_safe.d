@@ -12,6 +12,10 @@ void checkEquality(T)(T a, T b) {
   }
 }
 
+// @safe can be used as:
+//    that marks all the functions below it as safe 
+@safe:
+
 void main(string[] args) {
   int x = to!int("109");
 

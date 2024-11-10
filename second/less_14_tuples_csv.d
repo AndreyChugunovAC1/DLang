@@ -8,13 +8,22 @@ void main() {
    */
   import std.typecons;
 
-  Tuple!(int, float) t;
+  Tuple!(int, float) t0;
+  Tuple!int t1;
+  auto t2 = Tuple!(int, float)(1, 3.0f);
+  alias Pair = Tuple!(int, "first", int, "second");
+
+  Pair p;
+  p.first = 10;
+  p.second = 20;
+  writeln(p);
+  writeln(typeid(p));
 
   // not allowed if v is unknown at compile time:
   //  t[v] = 10;
-  t[0] = v;
-  t[1] = 10;
-  writeln(t);
+  t0[0] = 11;
+  t0[1] = 10.0f;
+  writeln(t0);
 
   /** 
    * CSV
