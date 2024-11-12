@@ -6,8 +6,8 @@ import std.typecons;
 
 void main() {
   // string is immutable(char)[]
-  char[] mutable_string = cast(char[]) "Undrey";
-  string immutable_string = cast(string) mutable_string;
+  char[] mutable_string = cast(char[])"Undrey";
+  string immutable_string = cast(string)mutable_string;
 
   mutable_string[0] = 'A';
   // immutable_string[0] = 'A'; // compile error
@@ -30,6 +30,6 @@ void main() {
 
   String str_raw = r"abcdef\n";
   Strings str_unicode = "\u20AC";
-  writeln(str_raw);     // will print '\n' at end
+  writeln(str_raw); // will print '\n' at end
   writeln(str_unicode); // strange creature
 }

@@ -17,6 +17,7 @@ class Class {
 // WHY:
 //    (C) the compiler can potentially avoid
 //        heap-allocating a unique argument to a scope parameter
+// int* here - example of reference type
 auto scopeParam(scope Class c, scope int* p) {
   // these parameters can not be passed to non-scope parameterized functions:
   // noScoper(p); -- error - it may escape our p
@@ -26,9 +27,13 @@ auto scopeParam(scope Class c, scope int* p) {
 }
 
 // pure & scope are similar
-//  pure - for entire function
-//  scope - for parameter.
+//    pure - for entire function
+//    scope - for parameter.
+// but with pure it is impossible to communicate with global state,
+// scope allows you to do e.g. 
+//    p = global;
 
+// int* here - example of reference type
 void scoper(scope int* p) {
 }
 
